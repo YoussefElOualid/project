@@ -184,7 +184,7 @@ class Model_request_finacards extends CI_Model {
                                $data, $query);
          
         }
-          $res = $this->db->query($query);
+         $res = $this->db->query($query);
           return  $res;
     }
 
@@ -262,7 +262,7 @@ public function InsertUtlisateur($data){
      return $res->result();
 
   }
-
+/// HADA 
   public function getdemandeUrgencev3($id){
 
 $isuserbank = str_replace('%p', "llx_command_filedet", $this->session->userdata('isUserBank'));

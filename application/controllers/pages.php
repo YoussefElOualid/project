@@ -215,8 +215,7 @@ public function getpdfProdCarte(){
      $data['type'] = $this->input->post('option');
      $data['action'] =$this->input->post('action');
   
- $is  = $this->Model_request_finacards->insertDemandeUrgnceVers(
-    $data); 
+ $is  = $this->Model_request_finacards->insertDemandeUrgnceVers($data);
 
 
     
@@ -445,6 +444,8 @@ echo 'Sorry! Current password is not matching';
 
 /// test Demande d Urgecne dernier Version
 
+
+// hada
   public function getinsertdUrgenceNewPlop(){ 
      // $data['id']=$this->input->post('id');
      $data['Num_carte']=$this->input->post('numcarte');

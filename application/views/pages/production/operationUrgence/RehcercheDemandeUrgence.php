@@ -12,7 +12,6 @@ if( count($rows) >0)
                             Demande d urgence
                         </div>
 
-
   <div class="panel-body">
  <form onsubmit="return GO(this);" action="'.base_url().'getinsertdUrgence" method="post"> 
  <div width="100%" class="table table-striped table-bordered table-hover">

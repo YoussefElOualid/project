@@ -42,6 +42,7 @@
 $route['default_controller'] = "home/view";
 $route['404_override'] = '';
 
+$route['email'] = 'Email_Controller';
 
 
 

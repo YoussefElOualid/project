@@ -16,7 +16,14 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://127.0.0.1:8888/extranetV3/';
+$config['base_url'] = 'http://myservice.com/extranetV3/';
+
+
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------

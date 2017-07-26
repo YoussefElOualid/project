@@ -2,11 +2,17 @@
 $output="";
 $rows =$dataRes;
 
+$num_card = $_POST['numcarte'];
+$method = $_POST['action'];
+$pin_cart = $_POST['option'];
+$nom_new = $_POST['nom'];
+
+
  if( count($rows) >0)
 {
+
  $output .= '
   <div class="table-responsive">
-  <form method="post" action="">
    <table width="100%" class="table table-striped table-bordered table-hover">
     <tr>
       <th>Numéro de carte</th>
@@ -26,17 +32,36 @@ $rows =$dataRes;
     <td>'.$u->clt_reference.'</td>
     <td>'.$u->file_reception_start.'</td>
    </tr>
-  '; 
+  ';
+	 $nom_new  = $u->holder_name;
+
  }
-echo $output.'</table>'.'t veux bien validie cet demande d urgence'.'<input type="submit" class="btn btn-primary" value="oui">'.'<input type="reset" value="non">'.'</form>';
-
-
+echo $output.'</table>'.'
+<br>
+  <form method="post" action="'.base_url().'getinsertdUrgenceNew">
+	<div class="alert alert-warning"><h4> tu veux bien validie cet demande d urgence </div>
+	
+	<input type="hidden" value="'.$num_card.'" name="numcarte">
+	<input type="hidden" value="'.$nom_new.'" name="nom">
+	<input type="hidden" value="'.$method.'" name="action">
+	<input type="hidden" value="'.$pin_cart.'" name="option">
+	
+	<input type="submit" class="btn btn-primary" value="oui">
+	<input type="reset" class="btn btn-danger" value="non">
+	</form>';
  }
 
 }
 
  else{
 
- 
-echo '<form method="post" action="salah">Numero de Carte Introuvable dans aucun fichier tu veux bien enregiste cette demande urgence <input type"submit" value="oui" class="btn btn-primary">  <input type"reset" value="Non" class="btn btn-primary"></form>';
+echo '<form method="post" action="'.base_url().'getinsertdUrgenceNew">
+			<input type="hidden" value="'.$num_card.'" name="numcarte">
+			<input type="hidden" value="'.$nom_new.'" name="nom">
+			<input type="hidden" value="'.$method.'" name="action">
+			<input type="hidden" value="'.$pin_cart.'" name="option">
+		<div class="alert alert-warning text-center"><h4>Numero de Carte Introuvable dans aucun fichier tu veux bien enregiste cette demande urgence </h4></div>
+		<input type="submit" value="oui" class="btn btn-primary" />  
+		<input type="reset" value="Non" class="btn btn-primary" />
+		</form>';
 }
